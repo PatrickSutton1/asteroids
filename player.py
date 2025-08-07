@@ -22,7 +22,9 @@ class Player(CircleShape):
 
     def update(self, dt): # Update this to reverse left and right when moving backwards
         keys = pygame.key.get_pressed()
-        self.timer -= dt
+
+        if self.timer > 0:
+            self.timer -= dt
 
         if keys[pygame.K_a]:
             self.rotate(-dt)
